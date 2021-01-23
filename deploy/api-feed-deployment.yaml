@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-feed
+  name: udagram-feed
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: udagram-feed
+  template:
+    metadata:
+      labels:
+        service: udagram-feed
+    spec:
+      containers:
+      - image:  langerca/udagram-feed:latest
+        name: udagram-feed
+        imagePullPolicy: Always          
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always

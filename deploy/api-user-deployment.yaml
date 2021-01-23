@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-user
+  name: udagram-user
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: udagram-user
+  template:
+    metadata:
+      labels:
+        service: udagram-user
+    spec:
+      containers:
+      - image:  langerca/udagram-user:latest
+        name: udagram-user
+        imagePullPolicy: Always          
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
