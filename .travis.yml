@@ -1,0 +1,19 @@
+language: generic
+
+os: linux
+
+services:
+ - docker
+
+jobs:
+  include:
+    - name: build and upload docker image
+      before_script:
+        - docker --version # print the version for logging
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      script:
+        - cd ./reverse-proxy
+        - docker build -t udagram-reverseproxy .
+        - docker tag udagram-reverseproxy langerca/udagram-reverseproxy:latest
+      after_success:
+        - docker push langerca/udagram-reverseproxy:latest

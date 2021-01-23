@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../:\Users\langerca\Documents\ista\Udacity\Cloud_Computing_Nanodegree\GitHub\carsten-langer\cloud-developer-microservices-deployment\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
