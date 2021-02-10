@@ -15,7 +15,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image:  langerca/udacity-reverse-proxy-my-app-2-svc:latest
+      - image:  langerca/udagram-reverseproxy:latest
         name: reverseproxy
         imagePullPolicy: Always          
         resources:
@@ -28,5 +28,3 @@ spec:
         ports:
         - containerPort: 8080
       restartPolicy: Always
-
-
